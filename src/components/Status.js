@@ -5,7 +5,11 @@ Status.propTypes = {
   isGreen: PropTypes.bool,
 };
 
-export default function Status({ isGreen = false }) {
+export default function Status({ isGreen = false, something }) {
+  if (isGreen) {
+    something.callANonExistingFunction();
+  }
+
   return (
     <Wrapper>
       Status:
